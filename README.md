@@ -35,4 +35,32 @@ optional arguments:
                         to determine shift values later. (default: 0000.png)  
   --nosample            disable creation of the sample frame.  
   
-Factorio! (The default expected input is a sequence of 0000.png to 9999.png.)  
+Factorio! (The default expected input is a sequence of 0000.png to 0999.png.)  
+
+
+### Factorio Sprite Shift Calculator
+
+usage: factorio_sprite_shift_calculator.py <width> <height> <center x> <center y>
+
+<width>    <height>   Total width and height of the frame. (1-indexed)
+<center x> <center y> Desired center point of the shifted frame. (0-indexed)
+
+Remember that the real center of an even-numbered width/height frame is _between_
+two rows of pixels. I.e. the center of a 64x64 frame is 31.5/31.5 . So Usually the
+center point you want will be half a pixel less (-0.5) than what your program shows
+you.
+
+Output: The required shift and approximate collision and selection boxes, preformatted
+as commented lua code. Also automatically copied to clipboard if you're on windows.
+
+Example:
+```batch
+> python factorio_sprite_shift_calculator.py 96 91 32.5 33.5
+```
+```lua
+selection_box = { { -1.00, -0.90 }, { 1.00, 0.90 } }, -- actual selection box
+collision_box = { { -0.90, -0.80 }, { 0.90, 0.80 } }, -- actual collision box
+selection_box = { { -0.95, -0.95 }, { 0.95, 0.95 } }, -- square selection box
+collision_box = { { -0.85, -0.85 }, { 0.85, 0.85 } }, -- square collision box
+shift         = { 0.46875, 0.359375 }, -- 96x91 x=32.5 y=33.5
+```

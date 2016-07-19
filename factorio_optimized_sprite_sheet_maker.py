@@ -271,7 +271,7 @@ print(
 if args.yes == False:
     a = input('\n Proceed with sheet creation? (yes/zes/no): ')
     try:
-        if a not in ['y','yes','sure','z','zes']: raise Exception()
+        if a not in ['y','yes','sure','z','zes','exterminate!']: raise Exception()
     except:
         error(' Aborted by user.')
         exit(3)
