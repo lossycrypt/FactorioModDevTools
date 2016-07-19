@@ -46,8 +46,8 @@ usage: factorio_sprite_shift_calculator.py <width> <height> <center x> <center y
 <center x> <center y> Desired center point of the shifted frame. (0-indexed)
 
 Remember that the real center of an even-numbered width/height frame is _between_
-two rows of pixels. I.e. the center of a 64x64 frame is 31.5/31.5 . So Usually the
-center point you want will be half a pixel less (-0.5) than what your program shows
+two rows of pixels. I.e. the center of a 64x64 frame is 31.5/31.5 . So usually the
+center point you want, will be half a pixel less (-0.5) than what your program shows
 you.
 
 Output: The required shift and approximate collision and selection boxes, preformatted
@@ -55,7 +55,7 @@ as commented lua code. Also automatically copied to clipboard if you're on windo
 
 Example:
 ```batch
-> python factorio_sprite_shift_calculator.py 96 91 32.5 33.5
+python factorio_sprite_shift_calculator.py 96 91 32.5 33.5
 ```
 ```lua
 selection_box = { { -1.00, -0.90 }, { 1.00, 0.90 } }, -- actual selection box

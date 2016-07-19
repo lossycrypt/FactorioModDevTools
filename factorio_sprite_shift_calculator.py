@@ -31,13 +31,13 @@ if x == int(x) or y == int(y):
 
 shiftx  = ((w-1)/2 - x) / 32
 shifty  = ((h-1)/2 - y) / 32
-shiftx -= shiftx % (1/256) # clip to factorio internal resolution
-shifty -= shifty % (1/256) # clip to factorio internal resolution
+shiftx -= shiftx % (1/256) # clip to factorio internal resolution?
+shifty -= shifty % (1/256) # clip to factorio internal resolution?
 
 
 # trying to guess selection and collision box up to two decimal points
 sel_corner_real   = [math.ceil(i * 100)/100 for i in ((w-x)/64, (h-y)/64)]
-sel_corner_square = [(sel_corner_real[0]+sel_corner_real[1]) / 2 for x in ('','')]
+sel_corner_square = [(sel_corner_real[0]+sel_corner_real[1]) / 2 for x in range(2)]
 selreal   = [ i*x for i in (-1,1) for x in sel_corner_real ] # mirror to opposite corner
 selsquare = [ i*x for i in (-1,1) for x in sel_corner_square ] # mirror to opposite corner
 
