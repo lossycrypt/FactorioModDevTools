@@ -40,10 +40,12 @@ Factorio! (The default expected input is a sequence of 0000.png to 0999.png.)
 
 ### Factorio Sprite Shift Calculator
 
-usage: factorio_sprite_shift_calculator.py <width> <height> <center x> <center y>
+usage: factorio_sprite_shift_calculator.py <width> <height> <center x> <center y> <scale>
 
 <width>    <height>   Total width and height of the frame. (1-indexed)
 <center x> <center y> Desired center point of the shifted frame. (0-indexed)
+<scale>               The scaling factor if any because shift is applied after scale
+                      by factorio. (default: 1.0)
 
 Remember that the real center of an even-numbered width/height frame is _between_
 two rows of pixels. I.e. the center of a 64x64 frame is 31.5/31.5 . So usually the
@@ -55,12 +57,13 @@ as commented lua code. Also automatically copied to clipboard if you're on windo
 
 Example:
 ```batch
-python factorio_sprite_shift_calculator.py 96 91 32.5 33.5
+python factorio_sprite_shift_calculator.py 96 91 32.5 33.5 1.5
 ```
 ```lua
-selection_box = { { -1.00, -0.90 }, { 1.00, 0.90 } }, -- actual selection box
-collision_box = { { -0.90, -0.80 }, { 0.90, 0.80 } }, -- actual collision box
-selection_box = { { -0.95, -0.95 }, { 0.95, 0.95 } }, -- square selection box
-collision_box = { { -0.85, -0.85 }, { 0.85, 0.85 } }, -- square collision box
-shift         = { 0.46875, 0.359375 }, -- 96x91 x=32.5 y=33.5
+selection_box = { { -1.49, -1.35 }, { 1.49, 1.35 } }, -- actual selection box
+collision_box = { { -1.39, -1.25 }, { 1.39, 1.25 } }, -- actual collision box
+selection_box = { { -1.42, -1.42 }, { 1.42, 1.42 } }, -- square selection box
+collision_box = { { -1.32, -1.32 }, { 1.32, 1.32 } }, -- square collision box
+shift         = { 0.7109375, 0.546875 }, -- 96x91 x=32.5 y=33.5 s=1.5
+scale         = 1.5,
 ```
