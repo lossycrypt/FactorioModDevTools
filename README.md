@@ -36,13 +36,3 @@ optional arguments:
   --nosample            disable creation of the sample frame.  
   
 Factorio! (The default expected input is a sequence of 0000.png to 9999.png.)  
-  
-D:\GAME／W7F\blender\blender-eradication-logo\anim>p make_optimized_sprite_sheet.py -o foxdamage --extra "-resize 96x" -y -h  
-Factorio Compressed Sprite Sheet Maker (v1.0)  
-  
-usage: make_optimized_sprite_sheet.py [-y] [-i IN_FILE_PATTERN]  
-                                      [-o OUT_FILE_PREFIX] [--extra "OPTIONS"]  
-                                      [-v] [-a] [-w WIDTH] [-h HEIGHT]  
-                                      [--help] [-s IN_FILE_NAME] [--nosample]  
-make_optimized_sprite_sheet.py: error: argument -h/--height: expected one argument  
-Use --help for help.  
